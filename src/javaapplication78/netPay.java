@@ -4,8 +4,12 @@ public class netPay {
 
     public static void main(String[] args) {
 
-        slipDetails sp = new slipDetails();
-        sp.getPay();
+//        slipDetails sp = new slipDetails();
+//        sp.getPay();
+
+          Product p = new Product();
+          p.addProduct(10011, "Soap", 20.00, 20, 30);
+          p.viewProduct();
 
     }
 }
