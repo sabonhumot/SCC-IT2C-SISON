@@ -53,8 +53,8 @@ public class netPay {
 //               
 //               }
         
-                netPayy np = new netPayy();
-                np.Salary();
+                netPayy[] np = new netPayy[100];
+                
 
 
 

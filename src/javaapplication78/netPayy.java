@@ -16,6 +16,7 @@ public class netPayy {
                 
                 System.out.print("Employee ID: ");
                 int eid = input.nextInt();
+                input.nextLine();
                 
                 System.out.print("Name: ");
                 String ename = input.nextLine();
@@ -28,11 +29,12 @@ public class netPayy {
                 
                 System.out.println("Total Deduction: ");
                 int td = input.nextInt();
-                
-            }
+                                
+            }     
+    }
+    
+    public void Salaries () {
         
-        
-        
-    } 
+    }
     
 }
