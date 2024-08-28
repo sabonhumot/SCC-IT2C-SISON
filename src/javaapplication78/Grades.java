@@ -15,7 +15,9 @@ public class Grades {
             this.pl = spl;
             this.m = sm;
             this.pf = spf;
-            this.f = sf;          
+            this.f = sf;    
+            
+            
         }
         
         public void viewGrades() {
@@ -23,6 +25,6 @@ public class Grades {
             String remarks = (ave > 3.0) ? "Failed" : "Passed";
             
             
-            System.out.println("%-10d %-10s %-10.2f %-10.2f %-10.2f %-10.2f %-10.2f %-10s\n", this.id, this.name, this.pl, this.m, this.pf, this.f);
+            System.out.printf("%-10d %-10s %-10.2f %-10.2f %-10.2f %-10.2f %-10.2f %-10s\n", this.id, this.name, this.pl, this.m, this.pf, this.f, ave, remarks);
         }
 }
