@@ -52,10 +52,11 @@ public class netPay {
 //                   gr[x].viewGrades();
 //               
 //               }
-        
-                netPayy[] np = new netPayy[100];
                 
-
+               // netPayy np = new netPayy();
+             
+        Salary sl = new Salary();
+        sl.addData();
 
 
     }
