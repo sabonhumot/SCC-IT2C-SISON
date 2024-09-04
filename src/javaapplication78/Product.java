@@ -1,35 +1,45 @@
+
 package javaapplication78;
+
+import java.util.Scanner;
 
 public class Product {
     
-    int id, sold, stock;
-    double price;
-    String name;
-    
-        public void addProduct(int pid, String pname, double pprice, int psold, int pstock) {
-            
-            this.id = pid;
-            this.name = pname;
-            this.price = pprice;
-            this.sold = psold;
-            this.stock = pstock;
-            
-            
-    }
-        public void viewProduct() {
-            double tep = this.price * this.stock;
-            double profit = this.price * this.sold;
-            
-            String status = (this.stock <= 0) ? "Out of Stock" : "Available";
-                    
-//                if(this.stock >= 0) {
-//                   status = "Out of Stock";
-//                }
-//                else {
-//                   status = "Available";
-//                }        
-            System.out.printf("%-10d %-10s %-10.2f %-10d %-10d %-10.2f %-10s %-10.2f\n",
-                    this.id, this.name, this.price, this.sold, this.stock, profit, status, tep);
-            
+    public void addProd () {
+        
+        Products[] pd = new Products[100];
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Enter no of products: ");
+        int noOfProd = input.nextInt();
+        
+            for (int x = 0; x < noOfProd; x++) {
+                System.out.printf("Enter details of product %d\n", x + 1);
+                
+                System.out.print("Product ID: ");
+                int id = input.nextInt();
+                input.nextLine();
+                
+                System.out.print("Product Name: ");
+                String name = input.nextLine();
+                
+                System.out.print("Price: ");
+                double price = input.nextDouble();
+                
+                System.out.print("Items Sold: ");
+                int sold = input.nextInt();
+                
+                System.out.print("Stock: ");
+                int stock = input.nextInt();
+                
+                pd[x] = new Products();
+                pd[x].addProduct(id, name, price, sold, stock);
+                
+                
+            }
+        
+        for (int x = 0; x < noOfProd; x++) {
+            pd[x].viewProduct();
         }
+    }
 }

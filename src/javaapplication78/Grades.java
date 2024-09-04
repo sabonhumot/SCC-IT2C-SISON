@@ -25,6 +25,10 @@ public class Grades {
             String remarks = (ave > 3.0) ? "Failed" : "Passed";
             
             
+            System.out.println("-------------------------------------------------------------------------------");
+            System.out.printf("-%15s %-10s %-10s %-10s %-10s %-10s %-10s %-10s", "Student ID", "Name", "Prelim", "Midterm", "Prefinal", "Final", "Average", "Remarks\n");
+            System.out.println("-------------------------------------------------------------------------------");
             System.out.printf("%-10d %-10s %-10.2f %-10.2f %-10.2f %-10.2f %-10.2f %-10s\n", this.id, this.name, this.pl, this.m, this.pf, this.f, ave, remarks);
+            
         }
 }
