@@ -13,6 +13,7 @@ public class Account {
         int noOfAcc = input.nextInt();
 
         for (int x = 0; x < noOfAcc; x++) {
+            acc[x] = new Accounts();
             System.out.printf("Enter details of account %d\n", x + 1);
 
             System.out.print("Enter ID: ");
@@ -28,28 +29,29 @@ public class Account {
             System.out.print("Enter username: ");
             String userName = input.nextLine();
 
-            acc[x] = new Accounts();
-            acc[x].addDetails(id, name, name, userName, name);
-
+            String password;
             while (true) {
                 System.out.print("Enter password: ");
-                String password = input.nextLine();
+                password = input.nextLine();
 
-                String specialChars = ".*[?!@#$%^&*()_+-=]*.";
-
-//                acc[x].passwordVerifier(password);
-
-                if (password.length() < 8
-                        && password.matches(".*[A-Z]*.")
-                        && password.matches(specialChars)
-                        && password.matches(".*\\d*.")) {
-//                  if (acc[x].passwordVerifier(password)) {
-//                      break;
-                    
+                if (acc[x].passwordVerifier(password)) {
+                    System.out.println("Password is Valid.");
+                    break;
+                } else {
+                    System.out.println("Invalid password! The password must contain at least:");
+                    System.out.println("- Minimum length of 8 characters.");
+                    System.out.println("- 1 digit.");
+                    System.out.println("- 1 special character.");
+                    System.out.println("- 1 uppercase letter");
                 }
             }
+            acc[x].addDetails(id, name, eMail, userName, password);
+        }
 
+        for (int x = 0; x < noOfAcc; x++) {
+            acc[x].viewDetails();
         }
 
     }
+
 }
