@@ -9,8 +9,8 @@ public class Main {
 //        Salary sl = new Salary();
 //        sl.addData();
 
-//        Grade gr = new Grade();
-//        gr.addGrade();
+        Grade gr = new Grade();
+        gr.genGrade();
 
 //        Product pd = new Product();
 //        pd.addProd();

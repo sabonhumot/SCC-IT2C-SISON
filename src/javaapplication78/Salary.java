@@ -42,6 +42,6 @@ public class Salary {
 
         for (int x = 0; x < noOfEmp; x++) {
             sl[x].viewData();
-        }
+        }             
     }
 }
