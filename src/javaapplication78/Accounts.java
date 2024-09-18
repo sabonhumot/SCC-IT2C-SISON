@@ -16,10 +16,10 @@ public class Accounts {
 
     public void viewDetails() {
 
-        System.out.println("------------------------------------------------------------------------------------------------");
-        System.out.printf("%-15s %-15s %-20s %-15s %-20s", "User ID", "Name", "eMail", "Username", "Password");
-        System.out.println("\n----------------------------------------------------------------------------------------------");
-        System.out.printf("%-15d %-15s %-20s %-15s %-20s", this.id, this.name, this.eMail, this.userName, this.password);
+//        System.out.println("------------------------------------------------------------------------------------------------");
+//        System.out.printf("%-15s %-15s %-20s %-15s %-20s", "User ID", "Name", "eMail", "Username", "Password");
+//        System.out.println("\n----------------------------------------------------------------------------------------------");
+        System.out.printf("%-15d %-15s %-20s %-15s %-20s\n", this.id, this.name, this.eMail, this.userName, this.password);
 
     }
 

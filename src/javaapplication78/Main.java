@@ -18,8 +18,8 @@ public class Main {
 //        slipDetails sd = new slipDetails();
 //        sd.getPay();
      
-         Account acc = new Account();
-         acc.addAcc();
+//         Account acc = new Account();
+//         acc.addAcc();
 
     }
 }

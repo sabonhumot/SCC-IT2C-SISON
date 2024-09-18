@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Salary {
 
     //public static void main(String[] args) {
-    public void addData () {
-    
+    public void addData() {
+
         Scanner input = new Scanner(System.in);
         Salaries[] sl = new Salaries[100];
 
@@ -31,11 +31,15 @@ public class Salary {
 
             System.out.print("Total Deduction: ");
             int td = input.nextInt();
-            
+
             sl[x] = new Salaries();
             sl[x].employeeData(id, name, rate, hours, td);
         }
-        
+
+        System.out.println("-------------------------------------------------------------------------------");
+        System.out.printf("%-15s %-10s %-15s %-20s %-10s %-15s %-10s", "Employee ID", "Name", "Rate (Hourly)", "Total Hours Worked", "Gross", "Total Deduction", "Net Pay\n");
+        System.out.println("-------------------------------------------------------------------------------");
+
         for (int x = 0; x < noOfEmp; x++) {
             sl[x].viewData();
         }

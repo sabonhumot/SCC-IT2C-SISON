@@ -48,6 +48,9 @@ public class Account {
             acc[x].addDetails(id, name, eMail, userName, password);
         }
 
+        System.out.println("------------------------------------------------------------------------------------------------");
+        System.out.printf("%-15s %-15s %-20s %-15s %-20s", "User ID", "Name", "eMail", "Username", "Password");
+        System.out.println("\n----------------------------------------------------------------------------------------------");
         for (int x = 0; x < noOfAcc; x++) {
             acc[x].viewDetails();
         }
