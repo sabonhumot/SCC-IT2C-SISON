@@ -8,33 +8,6 @@ import java.util.Scanner;
  */
 public class Grade {
 
-    public void editGrade(Grades[] gr, int nos, int id) {
-
-        Scanner input = new Scanner(System.in);
-
-        for (int i = 0; i < nos; i++) {
-            if (gr[i].id == id) {
-
-                System.out.print("Enter New Prelim Grade: ");
-                double pl = input.nextDouble();
-                gr[i].pl = pl;
-
-                System.out.print("Enter New Midterm Grade: ");
-                double m = input.nextDouble();
-                gr[i].m = m;
-
-                System.out.print("Enter New Prefinal Grade: ");
-                double pf = input.nextDouble();
-                gr[i].pf = pf;
-
-                System.out.print("Enter New Final Grade: ");
-                double f = input.nextDouble();
-                gr[i].f = f;
-            }
-        }
-
-    }
-
     public void genGrade() {
 
         Scanner input = new Scanner(System.in);
@@ -61,6 +34,7 @@ public class Grade {
                 option = input.nextInt();
             }
 
+            Grades grds = new Grades();
             switch (option) {
 
                 case 1:
@@ -106,12 +80,22 @@ public class Grade {
                     break;
 
                 case 3:
-                     System.out.print("Enter ID to Update: ");
-                     int sid = input.nextInt();
-                 System.out.printf("%d", sid);
-                     editGrade(gr, noStuds, sid);
+                    System.out.print("Enter ID to Update: ");
+                    int sid = input.nextInt();
+                    System.out.printf("\nID: %d", sid);
+                    grds = new Grades();
+                    grds.editGrade(gr, noStuds, sid);
+                    break;
+
+                case 4:
+                    System.out.print("Enter ID to Remove: ");
+                    sid = input.nextInt();
+                    grds = new Grades();
+                    grds.removeGrade(gr, noStuds, sid);
+                    noStuds--;
                     break;
             }
+
             System.out.println("Do you want to continue? (Y/N): ");
             choice = input.next();
         } while (choice.equals("Y") || choice.equals("y"));
