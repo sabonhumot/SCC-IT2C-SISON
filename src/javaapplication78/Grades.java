@@ -53,23 +53,21 @@ public class Grades {
         }
 
     }
-    
-    public void removeGrade (Grades [] gr, int nos, int id) {
-        
+
+    public void removeGrade(Grades[] gr, int nos, int id) {
+
         for (int x = 0; x < nos; x++) {
-            if(gr[x].id == id) {
+            if (gr[x].id == id) {
                 System.out.printf("Removing grades with ID: %d", id);
-                for(int i = x; x < nos; x++) {
+                for (int i = x; x < nos; x++) {
                     gr[i] = gr[i + 1];
                 }
-                System.out.println("Grades Removed Successfully.");
+                System.out.println("\nGrades Removed Successfully.");
                 nos--;
-            }
-            else {
+            } else {
                 System.out.println("ID not found.");
             }
         }
- 
- 
+
     }
 }
