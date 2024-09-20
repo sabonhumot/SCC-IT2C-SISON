@@ -49,6 +49,8 @@ public class Grades {
                 System.out.print("Enter New Final Grade: ");
                 double f = input.nextDouble();
                 gr[i].f = f;
+            } else {
+                System.out.println("ID not found.");
             }
         }
 
@@ -65,7 +67,7 @@ public class Grades {
                 System.out.println("\nGrades Removed Successfully.");
                 nos--;
             } else {
-                System.out.println("ID not found.");
+                System.out.println("Student ID not found.");
             }
         }
 

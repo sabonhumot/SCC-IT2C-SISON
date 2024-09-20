@@ -9,8 +9,8 @@ public class Main {
 //        Salary sl = new Salary();
 //        sl.addData();
 
-        Grade gr = new Grade();
-        gr.genGrade();
+//        Grade gr = new Grade();
+//        gr.genGrade();
 
 //        Product pd = new Product();
 //        pd.addProd();
@@ -18,8 +18,8 @@ public class Main {
 //        slipDetails sd = new slipDetails();
 //        sd.getPay();
      
-//         Account acc = new Account();
-//         acc.addAcc();
+         Account acc = new Account();
+         acc.addAcc();
 
     }
 }

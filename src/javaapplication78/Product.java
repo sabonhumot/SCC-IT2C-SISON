@@ -4,28 +4,6 @@ import java.util.Scanner;
 
 public class Product {
 
-    public void editProd(Products[] pd, int nop, int id) {
-
-        Scanner input = new Scanner(System.in);
-
-        for (int i = 0; i < nop; i++) {
-            if (pd[i].id == id) {
-
-                System.out.println("Enter New Price: ");
-                int price = input.nextInt();
-                pd[i].price = price;
-
-                System.out.println("Enter New Items Sold: ");
-                int is = input.nextInt();
-                pd[i].sold = is;
-
-                System.out.println("Enter New Stock: ");
-                int stock = input.nextInt();
-                pd[i].stock = stock;
-            }
-        }
-    }
-
     public void addProd() {
 
         Products[] pd = new Products[100];
@@ -44,13 +22,15 @@ public class Product {
             System.out.println("5. EXIT");
             System.out.println("---------------------------------------------------------");
 
-            System.out.println("Enter option: ");
+            System.out.print("Enter option: ");
             int option = input.nextInt();
 
             while (option > 5) {
                 System.out.println("Invalid Action. Please Try Again.");
                 option = input.nextInt();
             }
+
+            Products prod = new Products();
 
             switch (option) {
                 case 1:
@@ -83,9 +63,9 @@ public class Product {
                     break;
                 case 2:
 
-                    System.out.println("---------------------------------------------------------");
-                    System.out.printf("-%10s %-15s %-10s %-10s %-10s %-10s %-10s %-25s", "Product ID", "Product Name", "Price", "Items Sold", "Stock", "Profit", "Status", "Total Estimated Profit\n");
-                    System.out.println("---------------------------------------------------------");
+                    System.out.println("----------------------------------------------------------------------------------------------------------------------------------");
+                    System.out.printf("%10s %-15s %-10s %-10s %-10s %-10s %-10s %-25s", "Product ID", "Product Name", "Price", "Items Sold", "Stock", "Profit", "Status", "Total Estimated Profit");
+                    System.out.println("\n----------------------------------------------------------------------------------------------------------------------------------");
                     for (int x = 0; x < noOfProd; x++) {
                         pd[x].viewProduct();
                     }
@@ -93,10 +73,25 @@ public class Product {
 
                 case 3:
 
-                    System.out.println("Enter ID to Update: ");
+                    System.out.print("Enter ID to Update: ");
                     int id = input.nextInt();
-                    System.out.printf("%d", id);
-                    editProd(pd, noOfProd, id);
+                    System.out.printf("ID: %d", id);
+                    prod.editProd(pd, noOfProd, id);
+                    System.out.println("Product Updated Successfully.");
+                    break;
+
+                case 4:
+                    System.out.print("Enter ID to Remove: ");
+                    id = input.nextInt();
+                    System.out.printf("ID: %d", id);
+                    prod.removeProd(pd, noOfProd, id);
+                    noOfProd--;
+                    break;
+
+                case 5:
+                    System.out.println("Exiting the program. Goodboye!");
+                    System.exit(0);
+                    break;
             }
             System.out.print("Do you want to continue? (Y/N): ");
             choice = input.next();

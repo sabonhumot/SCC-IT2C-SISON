@@ -71,8 +71,8 @@ public class Grade {
 
                 case 2:
                     System.out.println("----------------------------------------------------------------------------------------------------------------------");
-                    System.out.printf("-%15s %-10s %-10s %-10s %-10s %-10s %-10s %-10s", "Student ID", "Name", "Prelim", "Midterm", "Prefinal", "Final", "Average", "Remarks\n");
-                    System.out.println("----------------------------------------------------------------------------------------------------------------------");
+                    System.out.printf("%15s %-10s %-10s %-10s %-10s %-10s %-10s %-10s", "Student ID", "Name", "Prelim", "Midterm", "Prefinal", "Final", "Average", "Remarks");
+                    System.out.println("\n----------------------------------------------------------------------------------------------------------------------");
                     for (int x = 0; x < noStuds; x++) {
                         gr[x].viewGrades();
 
@@ -80,19 +80,23 @@ public class Grade {
                     break;
 
                 case 3:
-                    System.out.print("Enter ID to Update: ");
+                    System.out.print("Enter Student ID to Update: ");
                     int sid = input.nextInt();
-                    System.out.printf("\nID: %d", sid);
-                    grds = new Grades();
+                    System.out.printf("\nStudent ID: %d", sid);
                     grds.editGrade(gr, noStuds, sid);
+                    System.out.println("Grades Updated Successfully.");
                     break;
 
                 case 4:
                     System.out.print("Enter ID to Remove: ");
-                    sid = input.nextInt();
-                    grds = new Grades();
+                    sid = input.nextInt();                  
                     grds.removeGrade(gr, noStuds, sid);
                     noStuds--;
+                    break;
+
+                case 5:
+                    System.out.println("Exiting the program. Goodbye !");
+                    System.exit(0);
                     break;
             }
 
